@@ -1,0 +1,35 @@
+{{define "css"}}
+<link href="/static/plugin/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+<link href="/static/plugin/bootstrap-3.3.7/css/bootstrap.css" rel="stylesheet" />
+<link href="/static/css/blockqr.min.css" rel="stylesheet" /> {{end}} {{define "body"}}
+<section class="qrblock">
+    <div class="container clearfix">
+        <div class="text">
+            <h3>
+                mã qr code tạm khóa
+            </h3>
+            <p>
+                Mã QR Code bị tạm khóa do tài khoản của bạn đã hết hạn sử dụng.
+                <br /> Vui lòng nâng cấp tài khoản để kích hoạt lại mã QR Code.
+            </p>
+            <img src="/static/img/arrow.png" />
+        </div>
+        <div class="padding-qr">
+            <div class="update">
+                <div class="blockimg">
+                    <img src="/static/img/qrlock.png" />
+                </div>
+                <a target="_blank" class="updatenow" href="http://qrcode-solution.com/bang-gia/">Nâng cấp ngay</a>
+                <p style="padding-top:10px;">
+                    Hãy liên hệ MiraScan để được hỗ trợ:
+                </p>
+                <p class="contact">
+                    <i class="fa fa-phone" aria-hidden="true"></i> Hotline: 0969 059 786
+                    <br />
+                    <i class="fa fa-envelope" aria-hidden="true"></i>Email: qrcode@miraway.vn
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+{{end}}

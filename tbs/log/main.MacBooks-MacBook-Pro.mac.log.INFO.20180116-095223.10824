@@ -1,0 +1,10 @@
+Log file created at: 2018/01/16 09:52:23
+Running on machine: MacBooks-MacBook-Pro
+Binary: Built with gc go1.8 for darwin/amd64
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0116 09:52:23.111992   10824 sync_config.go:38] [config]   Running as a master
+I0116 09:52:23.112464   10824 config_init.go:33] [config]   Config config:[db:host=localhost:27017;name=template-builder][station:[sync:master=http://localhost:4040;stores=[]][storage:upload=data/upload;record=data/record][static:folder=/Users/mac/Desktop/gocode/src/template-builder/tbs][log:dir=log,stderr=true,verbosisty=0][server:host=,port=4040]][business=[gen:lang=en;langs=[en]][service:wait=15;serve=15;fin=120;wait=0;serve=0][priority:vi=0;vc=0;pc=0;mo=0;bo=0;re=0;mps=0;mpuc=0]]
+I0116 09:52:23.112518   10824 vstatic_version.go:84] [vstatic]   version file app/.version missing
+I0116 09:52:23.112558   10824 vstatic_version.go:84] [vstatic]   version file /Users/mac/Desktop/gocode/src/template-builder/tbs/static/.version missing
+I0116 09:52:23.112743   10824 httpserver.go:34] [httpserver]   Listening on http://:4040
+I0116 09:52:23.114553   10824 db.go:80] [MongoDB]   connected to localhost:27017

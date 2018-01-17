@@ -1,0 +1,36 @@
+{{define "layout"}}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/static/plugin/styles/font-awesome.min.css" rel="stylesheet" />
+    <link href="/static/plugin/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/plugin/styles/styles.css" rel="stylesheet" /> {{template "css"}}
+</head>
+
+<body>
+    <div class="container wrapper">
+        {{template "body" .}}
+    </div>
+
+    <footer class="container">
+        <span>A Product by </span>
+        <h2> MIRASCAN</h2>
+    </footer>
+</body>
+
+<script src="/static/plugin/jquery/jquery-1.10.2.min.js"></script>
+<script src="/static/plugin/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script>
+    if ($('#frame').length > 0) {
+        var pdfLink = $('#frame').attr('src');
+        window.location = pdfLink;
+    }
+</script> {{template "scripts"}}
+
+</html>
+
+{{end}} {{define "css"}} {{end}} {{define "scripts"}} {{end}}

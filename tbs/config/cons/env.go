@@ -1,0 +1,16 @@
+package cons
+
+const ENV_OBJECT_DB = "QRCODE_DB"
+const DOMAIN_QRCODE_MKT = "http://qrs.vn:31000/v/s?id="
+const DOMAIN_LANDING_PAGE = "http://qrs.vn:31000/api/handle/view?id="
+const DOMAIN_LANDING_TEXT = "http://qrcode-marketing.com/mrs/landing_text.html?id="
+const DOMAIN_LANDING_IMAGE = "http://qrcode-marketing.com/mrs/landing_image.html?id="
+const DOMAIN_LANDING_PDF = "http://qrcode-marketing.com/mrs/landing_pdf.html?id="
+const DOMAIN_LANDING_AUDIO = "http://qrcode-marketing.com/mrs/landing_audio.html?id="
+const DOMAIN_LANDING_SOCIAL = "http://qrcode-marketing.com/mrs/landing_social.html?id="
+const DOMAIN_LANDING_VCARD = "http://qrcode-marketing.com/mrs/landing_vcard.html?id="
+const DOMAIN_LANDING_SOS = "http://qrcode-marketing.com/mrs/landing_sos.html?id="
+const DOMAIN_LANDING_PET = "http://qrcode-marketing.com/mrs/landing_pet.html?id="
+const DOMAIN_LANDING_RICH_TEXT = "http://qrcode-marketing.com/mrs/landing_rich_text.html?id="
+const DOMAIN_LANDING_SMART_URL = "http://qrcode-marketing.com/mrs/landing_smart_url.html?id="
+const DOMAIN_LANDING_EVENT = "http://qrcode-marketing.com/mrs/landing_event.html?id="

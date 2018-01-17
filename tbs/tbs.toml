@@ -1,0 +1,27 @@
+[station]
+[station.sync]
+Mode        = "master"
+Master      = "http://localhost:4040"
+[station.server]
+Port=4040
+#HttpsPort    = 8443
+[station.log]
+LogDir      = "log"
+LogToStdErr = true
+Verbosity   = 0
+[station.storage]
+Upload     = "data/upload"
+Record     = "data/record"
+[station.proxy]
+#Upload = "none"
+#Update = "none"
+#Record = "none"
+[station.static]
+AppFolder       = "app"
+DeviceFolder    = "device"
+[dev]
+#CPUProfile = "api.prof"
+
+[database]
+DBHost          = "localhost:27017"
+DBName          = "template-builder"

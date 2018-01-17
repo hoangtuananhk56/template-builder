@@ -1,0 +1,27 @@
+{{define "body"}}
+
+<!--<div class="row">
+        {{ range $key, $value := .data}}
+        <div class="col-md-12">
+            <a href="{{$value.URL}}" class="fa fa-{{ $key }}"></a>
+        </div>
+        {{ end }}
+</div>-->
+ <section class="landing-social">
+            <h3>Mạng xã hội của tôi</h3>         
+            <!-- class for social : .facebook, .google, .twiter, .linke, .pinterest, .instagram, .website -->
+            {{ range $key, $value := .data}}
+            <a href="{{$value.URL}}" class="social-btn facebook {{$key}}">
+                <i></i>
+                <span>{{$value.URL}}</span>                
+            </a>  
+            {{ end }}
+        </section>
+
+{{end}} {{define "scripts"}}
+
+<script>
+    //place js code
+</script>
+
+{{end}}

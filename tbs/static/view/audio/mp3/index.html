@@ -1,0 +1,38 @@
+{{define "body"}}
+
+<section class="landing-audio">
+	<h3>YOURSONG.MP3</h3>
+	<audio style="width:100%;" preload="auto" controls autoplay id="mySong">
+		<source src="{{.data.Path}}" type="audio/mp3">
+		<p>Trình duyệt của bạn không hỗ trợ HTML5 Audio</p>
+	</audio>
+	<a href="javascript:void(0)" class="audio-btn audi-play"></a>
+</section>
+<!--<a href="{{.data.Path}}" download>Download</a> -->
+{{end}}
+
+
+{{define "scripts"}}
+<script type="text/javascript">
+	$(document).ready(function () {
+		var myAudio = document.getElementById("mySong");
+		myAudio.onpause = function () {
+			$('.audio-btn').removeClass('audi-pause');
+			$('.audio-btn').addClass('audi-play');
+		};
+		myAudio.onplay = function () {
+			$('.audio-btn').removeClass('audi-play');
+			$('.audio-btn').addClass('audi-pause');
+		};
+
+		$('.audio-btn').on('click', function () {
+			if (myAudio.paused) {
+				myAudio.play();
+			} else {
+				myAudio.pause();
+			}
+		})
+
+	})
+</script>
+{{end}}
