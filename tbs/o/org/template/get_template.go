@@ -1,19 +1,20 @@
 package template
 
 import (
-	"gopkg.in/mgo.v2/bson"
-	"time"
 	"fmt"
+	"time"
+
+	"gopkg.in/mgo.v2/bson"
 )
 
-func GetByID(id string) (*Template, error){
+func GetByID(id string) (*Template, error) {
 	var temp Template
 	return &temp, TableTemplate.ReadByID(id, &temp)
 }
 
-func GetAll() ([]*Template, error) {
-	var temp = []*Template{}
-	return temp, TableTemplate.UnsafeReadAll(&temp)
+func GetAll(where map[string]interface{}) ([]*Template, error) {
+	var temps = []*Template{}
+	return temps, TableTemplate.UnsafeReadMany(where, &temps)
 }
 
 func Compute(fillter []bson.M) ([]*Template, error) {

@@ -13,4 +13,5 @@ type Template struct {
 	Mode          string `json:"mode" bson:"mode"`
 	Data          string `json:"data" bson:"data"`
 	Type          string `json:"type" bson:"type"`
+	Image         string `json:"image" bson:"image"`
 }

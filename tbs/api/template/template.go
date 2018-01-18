@@ -53,8 +53,16 @@ func (s *TemplateServer) HandleGetByID(w http.ResponseWriter, r *http.Request) {
 	s.SendData(w, u)
 }
 
+type SetType struct {
+	Mode string `json:"mode"`
+}
+
 func (s *TemplateServer) HandleAllTemp(w http.ResponseWriter, r *http.Request) {
-	var res, err = template.GetAll()
+	var St SetType
+	s.MustDecodeBody(r, &St)
+	var res, err = template.GetAll(map[string]interface{}{
+		"mode": St.Mode,
+	})
 	if err != nil {
 		s.SendError(w, err)
 	} else {
