@@ -18,6 +18,9 @@ func (b *Template) Create() error {
 func (v *Template) Update(newValue *Template) error {
 	var values = map[string]interface{}{}
 
+	values["mode"] = newValue.Mode
+	values["type"] = newValue.Type
+	values["data"] = newValue.Data
 	return TableTemplate.UnsafeUpdateByID(v.ID, values)
 }
 
