@@ -2,7 +2,6 @@ package template
 
 import (
 	"net/http"
-	"template-builder/tbs/api/auth/session"
 	"template-builder/tbs/o/org/template"
 	"template-builder/tbs/x/web"
 )
@@ -26,8 +25,8 @@ func NewTemplateServer() *TemplateServer {
 func (s *TemplateServer) HandleCreate(w http.ResponseWriter, r *http.Request) {
 	var temp template.Template
 	s.MustDecodeBody(r, &temp)
-	var u = session.MustAuthScope(r)
-	temp.UserID = u.ID
+	// var u = session.MustAuthScope(r)
+	// temp.UserID = u.ID
 	web.AssertNil(temp.Create())
 
 	s.SendData(w, temp)
