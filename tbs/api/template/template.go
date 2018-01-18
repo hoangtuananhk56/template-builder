@@ -2,6 +2,7 @@ package template
 
 import (
 	"net/http"
+	"template-builder/tbs/api/auth/session"
 	"template-builder/tbs/o/org/template"
 	"template-builder/tbs/x/web"
 )
@@ -11,9 +12,9 @@ type TemplateServer struct {
 	*http.ServeMux
 }
 
-func  NewTemplateServer()*TemplateServer{
-	var s =&TemplateServer{
-		ServeMux:http.NewServeMux(),
+func NewTemplateServer() *TemplateServer {
+	var s = &TemplateServer{
+		ServeMux: http.NewServeMux(),
 	}
 	s.HandleFunc("/create", s.HandleCreate)
 	s.HandleFunc("/get", s.HandleGetByID)
@@ -22,13 +23,14 @@ func  NewTemplateServer()*TemplateServer{
 	return s
 }
 
-func (s *TemplateServer) HandleCreate(w http.ResponseWriter, r *http.Request){
-	var u template.Template
-	s.MustDecodeBody(r, &u)
-	web.AssertNil(u.Create())
+func (s *TemplateServer) HandleCreate(w http.ResponseWriter, r *http.Request) {
+	var temp template.Template
+	s.MustDecodeBody(r, &temp)
+	var u = session.MustAuthScope(r)
+	temp.UserID = u.ID
+	web.AssertNil(temp.Create())
 
-	s.SendData(w, u)
-	//cu.OnUserCreated(u.ID)
+	s.SendData(w, temp)
 }
 func (s *TemplateServer) mustGetTemp(r *http.Request) *template.Template {
 	var id = r.URL.Query().Get("id")
