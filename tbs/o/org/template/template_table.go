@@ -22,6 +22,7 @@ func (v *Template) Update(newValue *Template) error {
 	values["type"] = newValue.Type
 	values["data"] = newValue.Data
 	values["image"] = newValue.Image
+	values["name"] = newValue.Name
 	return TableTemplate.UnsafeUpdateByID(v.ID, values)
 }
 
