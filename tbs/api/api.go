@@ -3,6 +3,7 @@ package api
 import (
 	"net/http"
 	"template-builder/tbs/api/auth"
+	"template-builder/tbs/api/person"
 	"template-builder/tbs/api/template"
 	"template-builder/tbs/api/user"
 	"template-builder/tbs/x/web"
@@ -21,6 +22,7 @@ func NewApiServer() *ApiServer {
 	s.Handle("/user/", http.StripPrefix("/user", user.NewUserServer()))
 	s.Handle("/auth/", http.StripPrefix("/auth", auth.NewAuthServer()))
 	s.Handle("/template/", http.StripPrefix("/template", template.NewTemplateServer()))
+	s.Handle("/per/", http.StripPrefix("/per", person.NewPersonServer()))
 	return s
 }
 
